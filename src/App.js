@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Layout from './containers/layout';
 import './App.css';
 
-function App() {
-  return (
-    <div>Hello</div>
-  );
+class App extends Component {
+  state = {
+
+  }
+  render() {
+    return (
+      <Layout />
+    );
+  }
 }
 
 export default App;
