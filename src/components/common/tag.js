@@ -18,7 +18,7 @@ const TagDiv = styled.span`
 
 const Tag = ({tag, history}) => {
   const handleTagClick = () => {
-    history.push(`/?tag=${tag}`)
+    history.push(`/tag/${tag}`)
   }
   return (
     <TagDiv onClick={handleTagClick}>

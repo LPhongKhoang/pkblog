@@ -17,9 +17,10 @@ const MenuLink = styled(NavLink)`
 const NavMenu = ({ menus }) => {
   return (
     <ListGroup
+      className="nav-menus"
       data={menus}
       renderItem={m => (
-        <MenuLink to={`/menu/${m._id}`}>{m.name}</MenuLink>
+        <MenuLink to={`/menu/${m.name}`}>{m.name}</MenuLink>
       )}
     />
   );

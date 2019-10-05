@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Post = ({post}) => {
+const Post = ({match}) => {
   return (
     <div style={{padding: "50px"}}>
-      Post details
+      Post details {match.params.title}
     </div>
   );
 }

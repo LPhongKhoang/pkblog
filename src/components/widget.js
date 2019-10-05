@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from 'react-router-dom';
 import { SearchBox, LightBox } from "./common/smooth-box";
 import { Link } from "react-router-dom";
 import ListGroup from "./common/list-group";
@@ -29,19 +30,19 @@ class Widget extends React.Component {
   state = {
     hotTopics: [],
     hotPosts: [],
-    searchTag: ""
+    searchText: ""
   };
 
-  handleSearchTagChange = e => {
-    this.setState({ searchTag: e.target.value });
+  handlesearchTextChange = e => {
+    this.setState({ searchText: e.target.value });
   };
 
   handleEnterSearch = e => {
     if(e.keyCode === 13) {
       // "Enter" is pressed
-      const searchTag = this.state.searchTag;
-      if(searchTag.trim()==="") return;
-      console.log("Get post by search tag: ", searchTag);
+      const searchText = this.state.searchText;
+      if(searchText.trim()==="") return;
+      this.props.history.push(`/searchText/${searchText}`);
     }
   };
 
@@ -54,16 +55,16 @@ class Widget extends React.Component {
   }
 
   render() {
-    const { hotTopics, hotPosts, searchTag } = this.state;
+    const { hotTopics, hotPosts, searchText } = this.state;
     return (
       <div className="widget">
         <SearchBox className="search-box">
           <input
             style={{ padding: "0.75rem 0", width: "100%", border: "none" }}
             placeholder="Search..."
-            name="searchTag"
-            value={searchTag}
-            onChange={this.handleSearchTagChange}
+            name="searchText"
+            value={searchText}
+            onChange={this.handlesearchTextChange}
             onKeyUp={this.handleEnterSearch}
           />
         </SearchBox>
@@ -75,7 +76,7 @@ class Widget extends React.Component {
             styleItem={{ align: "left", gap: "15px"}}
             style={{paddingTop: "10px"}}
             renderItem = {t => (
-              <TopicLink to={`/topic/${t._id}`}>{t.name}</TopicLink>
+              <TopicLink to={`/topic/${t.name}`}>{t.name}</TopicLink>
             )}
           />
 
@@ -88,7 +89,7 @@ class Widget extends React.Component {
             styleItem={{ align: "left", gap: "15px"}}
             style={{paddingTop: "10px"}}
             renderItem = {p => (
-              <Link to={`/post/${p._id}`}>{p.title}</Link>
+              <Link to={`/post/${p.title}`}>{p.title}</Link>
             )}
           />
         </LightBox>
@@ -97,4 +98,4 @@ class Widget extends React.Component {
   }
 }
 
-export default Widget;
+export default withRouter(Widget);

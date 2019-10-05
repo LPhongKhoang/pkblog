@@ -10,4 +10,9 @@ export default styled.button`
   padding: 5px 16px;
   cursor: pointer;
   margin: 0px 20px;
+  &:disabled {
+    cursor: not-allowed;
+    background: #efd1b4;
+    border: #efd1b4;
+  }
 `;

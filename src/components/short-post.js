@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import IconText from './common/icon-text';
 import Tag from "./common/tag";
+import {shortDate} from "../utils/format-date";
+
 import styled from "styled-components";
 
 
@@ -30,7 +32,7 @@ const ShortPost = ({post}) => {
   return (
     <Container>
       <div>
-        <TitleLink to={`/post/${post._id}`}>{post.title}</TitleLink>
+        <TitleLink to={`/post/${post.title}`}>{post.title}</TitleLink>
       </div>
 
       <div style={styles.float}>
@@ -38,20 +40,20 @@ const ShortPost = ({post}) => {
           <IconText icon="clock-o" text={`${post.estimateReadingTime + " min read"}`} />
         </div>
         <div style={styles.floatRight}>
-          <IconText icon="calendar" text={post.createDate} />
+          <IconText icon="calendar" text={shortDate(post.createDate)} />
         </div>
       </div>
 
       <p className="mt-3 mb-5">
         {post.shortDes}
         <span className="ml-2">
-          <Link to={`/post/${post._id}`} style={{fontWeight: "bold"}}>[...]</Link>
+          <Link to={`/post/${post.title}`} style={{fontWeight: "bold"}}>[...]</Link>
         </span> 
       </p>
 
       <div>
-        {post.tags.map(tag => (
-          <Tag tag={tag} />
+        {post.tags.map((tag, idx) => (
+          <Tag key={idx} tag={tag} />
         ))}
       </div>
     </Container>

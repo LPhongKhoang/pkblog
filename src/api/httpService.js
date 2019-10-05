@@ -1,19 +1,25 @@
 import axios from "axios";
 
 // axios config defaults base api_url
-axios.defaults.baseURL=process.env.REACT_APP_API_URL
+axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 
 // axios interceptors
-axios.interceptors.response.use(null, error => {
-  const isExpectedError = error.response && error.response.status >= 400
-    && error.response.status < 500;
-  if(!isExpectedError) {
-    logger.log(error);
-    toast.error("An unexpected error occurred");
-  }
+axios.interceptors.response.use(
+  res => Promise.resolve(res.data),
+  error => {
+    const isExpectedError =
+      error.response &&
+      error.response.status >= 400 &&
+      error.response.status < 500;
+    if (!isExpectedError) {
+      // logger.log(error);
+      // toast.error("An unexpected error occurred");
+      console.error("Unexpected error occurred");
+    }
 
-  return Promise.reject(error);
-});
+    return Promise.reject(error);
+  }
+);
 
 // export Interface
 export default {
@@ -21,6 +27,5 @@ export default {
   post: axios.post,
   put: axios.put,
   patch: axios.patch,
-  delete: axios.delete,
-  setTokenToHeaders
-}
+  delete: axios.delete
+};

@@ -15,9 +15,9 @@ const Menu = styled.ul`
   min-height: 40%;
 `;
 
-const ListGroup = ({ data, styleItem={}, style={}, renderItem }) => {
+const ListGroup = ({ data, styleItem={}, style={}, renderItem, ...rest }) => {
   return (
-    <Menu height={style.height} paddingTop={style.paddingTop}>
+    <Menu height={style.height} paddingTop={style.paddingTop} {...rest}>
       {data.map((m, idx) => (
         <MenuItem key={idx} styleItem={styleItem}>
           {renderItem(m)}
