@@ -17,7 +17,14 @@ class Post extends React.Component {
   }
 
   componentDidUpdate() {
-    hljs.initHighlightingOnLoad();
+    this.highlight();
+  }
+
+  highlight = () => {
+    const nodes = document.querySelectorAll('.post-content pre > code');
+    nodes.forEach((node) => {
+        hljs.highlightBlock(node);
+    });
   }
 
   render() {
