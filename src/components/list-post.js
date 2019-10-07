@@ -23,13 +23,13 @@ class ListPost extends React.Component {
 
     this.page = page;
     const type = params.type;
-    const name = params.name;
+    const slug = params.slug;
 
     let tag ="", searchText="";
     if(type==="tag") {
-      tag = name;
+      tag = slug;
     }else if(type==="searchText") {
-      searchText =name;
+      searchText =slug;
     }
 
     const { posts, maxPage } = await filterPosts({
@@ -37,7 +37,7 @@ class ListPost extends React.Component {
       searchText,
       tag,
       type,
-      name
+      slug
     });
     
     this.setState({ posts, maxPage, loading: false });

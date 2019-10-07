@@ -20,7 +20,7 @@ const NavMenu = ({ menus }) => {
       className="nav-menus"
       data={menus}
       renderItem={m => (
-        <MenuLink to={`/menu/${m.name}`}>{m.name}</MenuLink>
+        <MenuLink to={`/menu/${m.slug}`}>{m.name}</MenuLink>
       )}
     />
   );

@@ -76,7 +76,7 @@ class Widget extends React.Component {
             styleItem={{ align: "left", gap: "15px"}}
             style={{paddingTop: "10px"}}
             renderItem = {t => (
-              <TopicLink to={`/topic/${t.name}`}>{t.name}</TopicLink>
+              <TopicLink to={`/topic/${t.slug}`}>{t.name}</TopicLink>
             )}
           />
 
@@ -89,7 +89,7 @@ class Widget extends React.Component {
             styleItem={{ align: "left", gap: "15px"}}
             style={{paddingTop: "10px"}}
             renderItem = {p => (
-              <Link to={`/post/${p.title}`}>{p.title}</Link>
+              <Link to={`/post/${p.slug}`}>{p.title}</Link>
             )}
           />
         </LightBox>

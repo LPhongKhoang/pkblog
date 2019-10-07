@@ -32,7 +32,7 @@ const ShortPost = ({post}) => {
   return (
     <Container>
       <div>
-        <TitleLink to={`/post/${post.title}`}>{post.title}</TitleLink>
+        <TitleLink to={`/post/${post.slug}`}>{post.title}</TitleLink>
       </div>
 
       <div style={styles.float}>
@@ -47,7 +47,7 @@ const ShortPost = ({post}) => {
       <p className="mt-3 mb-5">
         {post.shortDes}
         <span className="ml-2">
-          <Link to={`/post/${post.title}`} style={{fontWeight: "bold"}}>[...]</Link>
+          <Link to={`/post/${post.slug}`} style={{fontWeight: "bold"}}>[...]</Link>
         </span> 
       </p>
 

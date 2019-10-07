@@ -23,9 +23,9 @@ class Layout extends React.Component {
           <div className="row">
             <div className="col-sm-12 col-md-8 col-lg-9">
               <Switch>
-                <Route path="/post/:title" component={Post} />
+                <Route path="/post/:slug" component={Post} />
                 <Route path="/test" component={TestComponent} />
-                <Route path="/:type?/:name?" render={props => <ListPost key={uuid()} {...props}/>} />
+                <Route path="/:type?/:slug?" render={props => <ListPost key={uuid()} {...props}/>} />
               </Switch>
             </div>
             <div className="col-sm-12 col-md-4 col-lg-3">
