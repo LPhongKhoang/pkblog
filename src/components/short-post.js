@@ -1,11 +1,10 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
-import IconText from './common/icon-text';
+import IconText from "./common/icon-text";
 import Tag from "./common/tag";
-import {shortDate} from "../utils/format-date";
+import { shortDate } from "../utils/format-date";
 
 import styled from "styled-components";
-
 
 const Container = styled.div`
   min-width: 300px;
@@ -20,35 +19,47 @@ const TitleLink = styled(Link)`
   &:hover {
     color: #d89550;
   }
-`
+`;
 
 const styles = {
-  float: { display: "float", overflow: "hidden"},
-  floatLeft: { float: "left"},
-  floatRight: { float: "right"}
-}
+  float: { display: "float", overflow: "hidden" },
+  floatLeft: { float: "left" },
+  floatRight: { float: "right" }
+};
 
-const ShortPost = ({post}) => {
+export const HeaderPost = ({ post }) => {
   return (
-    <Container>
+    <div className="mb-3">
       <div>
         <TitleLink to={`/post/${post.slug}`}>{post.title}</TitleLink>
       </div>
 
       <div style={styles.float}>
         <div style={styles.floatLeft}>
-          <IconText icon="clock-o" text={`${post.estimateReadingTime + " min read"}`} />
+          <IconText
+            icon="clock-o"
+            text={`${post.estimateReadingTime + " min read"}`}
+          />
         </div>
         <div style={styles.floatRight}>
           <IconText icon="calendar" text={shortDate(post.createDate)} />
         </div>
       </div>
+    </div>
+  );
+};
 
-      <p className="mt-3 mb-5">
+export default ({ post }) => {
+  return (
+    <Container>
+      <HeaderPost post={post} />
+      <p className="mb-5">
         {post.shortDes}
         <span className="ml-2">
-          <Link to={`/post/${post.slug}`} style={{fontWeight: "bold"}}>[...]</Link>
-        </span> 
+          <Link to={`/post/${post.slug}`} style={{ fontWeight: "bold" }}>
+            [...]
+          </Link>
+        </span>
       </p>
 
       <div>
@@ -58,8 +69,4 @@ const ShortPost = ({post}) => {
       </div>
     </Container>
   );
-}
-
-
- 
-export default ShortPost;
+};

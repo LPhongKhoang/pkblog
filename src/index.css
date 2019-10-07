@@ -29,6 +29,48 @@ ul.nav-menus li a.active {
   color: #aaeddb;
 }
 
+/* ======== Post content style =========== */
+/* Block code */
+.post-content {
+  font-size: 18px;
+}
+.post-content pre {
+  /* background-color: #26282c;
+  padding: 10px; */
+  border-radius: 5px;
+  width: 100%;
+  overflow-x: auto;
+  font-size: 17px;
+  max-width: 100%;
+  margin: 10px 0;
+}
+/* Quote */
+.post-content blockquote {
+  border-left: 5px solid #000;
+  background: #d3d3d3;
+  margin: 0;
+  padding: 8px 12px;
+}
+
+/* Images */
+.post-content > p > img {
+  border-radius: 10px;
+  display: inline-block;
+  width: 100%;
+  min-width: 200px;
+  height: auto;
+
+}
+
+/* Links */
+.post-content > p > a{
+  font-weight: 800;
+  color: #bd6112;
+}
+.post-content > p:hover > a {
+  color: #daa679;
+}
+
 /* ======= Close, open Menu sider =========== */
 .content {
   margin-left: 300px;
