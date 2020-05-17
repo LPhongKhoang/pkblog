@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/pkblog/static/css/main.8d35dcfe.chunk.css",
+    "main.js": "/pkblog/static/js/main.c931e96f.chunk.js",
+    "main.js.map": "/pkblog/static/js/main.c931e96f.chunk.js.map",
+    "runtime-main.js": "/pkblog/static/js/runtime-main.36eede56.js",
+    "runtime-main.js.map": "/pkblog/static/js/runtime-main.36eede56.js.map",
+    "static/css/2.f3504816.chunk.css": "/pkblog/static/css/2.f3504816.chunk.css",
+    "static/js/2.474face1.chunk.js": "/pkblog/static/js/2.474face1.chunk.js",
+    "static/js/2.474face1.chunk.js.map": "/pkblog/static/js/2.474face1.chunk.js.map",
+    "index.html": "/pkblog/index.html",
+    "precache-manifest.c87e4eee5545d79d7b1d1732294ef8ec.js": "/pkblog/precache-manifest.c87e4eee5545d79d7b1d1732294ef8ec.js",
+    "service-worker.js": "/pkblog/service-worker.js",
+    "static/css/2.f3504816.chunk.css.map": "/pkblog/static/css/2.f3504816.chunk.css.map",
+    "static/css/main.8d35dcfe.chunk.css.map": "/pkblog/static/css/main.8d35dcfe.chunk.css.map",
+    "static/media/fb.png": "/pkblog/static/media/fb.cd01d3c1.png",
+    "static/media/font-awesome.css": "/pkblog/static/media/fontawesome-webfont.fee66e71.woff",
+    "static/media/me.jpg": "/pkblog/static/media/me.56e20fad.jpg"
+  }
+}
