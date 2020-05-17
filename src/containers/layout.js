@@ -5,6 +5,7 @@ import MenuSider from "./menu-sider";
 import Post from "./../components/post";
 import ListPost from "./../components/list-post";
 import TestComponent from "./../components/test-component";
+import LoginCallback from "./../components/login-callback";
 import Widget from "../components/widget";
 
 class Layout extends React.Component {
@@ -23,12 +24,16 @@ class Layout extends React.Component {
               <Switch>
                 <Route
                   path="/post/:slug"
-                  render={props => <Post key={uuid()} {...props} />}
+                  render={(props) => <Post key={uuid()} {...props} />}
                 />
                 <Route path="/test" component={TestComponent} />
                 <Route
+                  path="/login/callback"
+                  render={(props) => <LoginCallback {...props} />}
+                />
+                <Route
                   path="/:type?/:slug?"
-                  render={props => <ListPost key={uuid()} {...props} />}
+                  render={(props) => <ListPost key={uuid()} {...props} />}
                 />
               </Switch>
             </div>

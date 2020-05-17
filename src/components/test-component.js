@@ -1,7 +1,8 @@
-import React from 'react';
-import Tag from './common/tag';
-import IconText from './common/icon-text';
+import React from "react";
+import Tag from "./common/tag";
+import IconText from "./common/icon-text";
 import Button from "./common/button";
+import ButtonOAuth2Login from "./button-oauth2-login";
 
 const TestComponent = () => {
   return (
@@ -17,15 +18,12 @@ const TestComponent = () => {
       </div>
       <div>
         <p>Button: </p>
-        <Button>
-          >>
-        </Button>
-        <Button>
-          {"<<"}
-        </Button>
+        <Button>Demo button</Button>
+
+        <ButtonOAuth2Login />
       </div>
     </div>
   );
-}
- 
+};
+
 export default TestComponent;
