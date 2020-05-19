@@ -3,7 +3,7 @@ export default {
   redirect_uri:
     process.env.REACT_APP_REDIRECT_URI ||
     "http://localhost:3000/login/callback",
-  authorization_endpoint: "https://dev-185023.okta.com/oauth2/default/v1/auth",
-  token_endpoint: "https://dev-185023.okta.com/oauth2/default/v1/token",
+  authorization_endpoint: "https://github.com/login/oauth/authorize",
+  token_endpoint: "https://github.com/login/oauth/access_token",
   requested_scopes: "openid",
 };
